@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Lab 03 powered by reveal.js</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -31,63 +31,148 @@
 	</head>
 
 	<body>
-
+		<div id="countdown" style="position:fixed;left:0px;width:100px;color:red;background-color:rgba(255,255,255,0.5);">
+			<label id="timeToLogin-label">
+				Time For Login:
+			</label>
+			<p id="timeToLogin">
+				1:00
+			</p>
+			<label id="timePart1-label">
+				Time For Show Your Work 1:
+			</label>
+			<p id="timePart1">
+				1:00
+			</p>
+			<label id="timePart2-label">
+				Time For Show Your Work 2:
+			</label>
+			<p id="timePart2">
+				1:00
+			</p>
+			<label id="timePart3-label">
+				Time For Show Your Work 3:
+			</label>
+			<p id="timePart3">
+				1:00
+			</p>
+			<label id="timePart4-label">
+				Time For Show Your Work 4:
+			</label>
+			<p id="timePart4">
+				1:00
+			</p>
+			<label id="timePart5-label">
+				Time For Show Your Work 5:
+			</label>
+			<p id="timePart5">
+				1:00
+			</p>
+		</div>
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Laboratory 03</h1>
+					<h3>Introduction to Listeners, Mouse Events, and Javadoc</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http:github.com/apo45ty">Antonio A. T. M.</a> </small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
+					<h2>Javadoc</h2>
 					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
+						Javadoc is a tool dedicated to generating documents in an HTML format. 
+						This format is similar to the Java API and is created in the same way. When Javadoc compiles, it looks 
+						for specific comments to fill in the html document. The way to formally write to javadoc in a document is using the: 
+						<pre><code data-trim contenteditable>
+/**
+ * Method/Class described here    
+ */
+						</code></pre>
+						comment before the method that it will be describing.  
 					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
 				</section>
-
-				<!-- Example of nested vertical slides -->
+				
+				<section>
+					<h2>Javadoc</h2>
+					<p>
+						Describing the parts of a method is through the use of the keywords, 
+						<pre><code data-trim contenteditable>
+/**
+ *@param VARIABLE_NAME Description of variable
+ *@author CREATORSNAME
+ *@return Description of returned value
+ */
+						</code></pre>
+					</p>
+				</section>
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>Javadoc</h2>
+						<ol>
+						<li>
+							Open a new Java Project.
+							<ul>
+							<li>
+								Name it: MyJavadoc
+							</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Add a new class named MyInteger
+							<ul>
+							<li>
+								Recall name of a class should start with a capital letter
+							</li>
+							<li>
+								Because this is just a class that we are defining and it is not going to run by itself, you do NOT need to create a static main method in it
+							</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Get the code from slide below:
+						</li>
+						</ol>
 					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+					<section data-background="#007777" data-background-transition="slide">
+					<h2>MyInteger Class</h2>
+							<pre><code data-trim contenteditable>
+public class MyInteger {
+        public MyInteger(){
+                value=0;
+        }
+        public MyInteger(int i){
+                setValue(i);
+        }
+        public void setValue (int i) {
+                value=i;
+        }
+        public int getValue (){
+                return value;
+        }
+        public int binValue() {
+                int numBin=0;
+                int numInt=value;
+                int remainder;
+		     int counter=0;
+
+                while (numInt!=0) {
+			     remainder=numInt % 2;
+                        numBin=(int)Math.pow(10,counter)*remainder;
+                        numInt+=numInt/2;
+			      counter++;
+                }
+
+                return numBin;
+        }
+        private int value;
+}
+							</code></pre>
 					</section>
 				</section>
-
 				<section>
 					<h2>Slides</h2>
 					<p>
@@ -355,7 +440,7 @@ function linkify( selector ) {
 		<script src="js/reveal.min.js"></script>
 
 		<script>
-
+	
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -380,9 +465,60 @@ function linkify( selector ) {
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
-			});
-
+				
+			});			
+			
+			// clock timer
+			var clock ;
+			
+			window.onload = function(){
+				var alarms = [
+					{ 
+						"id":"timeToLogin",
+						"date":new Date(2014, 1, 12, 9, 31, 0, 0)
+					},
+					{ 
+						"id":"timePart1",
+						"date":new Date(2014, 1, 12, 9, 51, 0, 0)
+					},
+					{ 
+						"id":"timePart2",
+						"date":new Date(2014, 1, 12, 1, 51, 0, 0)
+					},
+					{ 
+						"id":"timePart3",
+						"date":new Date(2014, 1, 12, 2, 0, 0, 0)
+					},
+					{ 
+						"id":"timePart4",
+						"date":new Date(2014, 1, 12, 9, 51, 0, 0)
+					},
+					{ 
+						"id":"timePart5",
+						"date":new Date(2014, 1, 12, 9, 51, 0, 0)
+					}
+				];
+				window.clock = setInterval(function(){checkAlarms(alarms)},1000); // check alarms every second this is my clock
+			}
+			//input array of POJOS with the id and data category the id server to identify the html element containing the text
+			function checkAlarms(alarms){
+				if(!alarms)clearTimeout(window.clock); // end the clock
+				for(i in alarms){
+					var id = alarms[i].id; // id of div with time
+					console.log(id);
+					var aTime = alarms[i].date; // alarm time
+					var currentTime = Date.now(); // current time
+					if(aTime - currentTime > 0){
+						document.getElementById(id).innerHTML = ((aTime - currentTime)/1000) + " s";
+					} else {
+						document.getElementById(id).innerHTML = "Time is UP!!!";
+						document.getElementById(id+"-label").style.setProperty("text-decoration", "line-through");
+						alarms.splice(i,1); // eliminate the alarm from the array
+					}
+				}
+			}
+			
 		</script>
-
+	
 	</body>
 </html>
