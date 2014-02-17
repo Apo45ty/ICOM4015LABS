@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Lab 05 powered by reveal.js</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div id="countdown" style="position:fixed;left:0px;width:100px;color:red;background-color:rgba(255,255,255,0.5);">
+			<label id="timeTotal-label">
+				Total Time:
+			</label>
+			<p id="timeTotal">
+				1:00
+			</p>
+			<label id="timeToLogin-label">
+				Time For Login:
+			</label>
+			<p id="timeToLogin">
+				1:00
+			</p>
+			<label id="timePart1-label">
+				Time For Show Your Work 1:
+			</label>
+			<p id="timePart1">
+				1:00
+			</p>
+			<label id="timePart2-label">
+				Time For Show Your Work 2:
+			</label>
+			<p id="timePart2">
+				1:00
+			</p>
+			<label id="timePart3-label">
+				Time For Show Your Work 3:
+			</label>
+			<p id="timePart3">
+				1:00
+			</p>
+			<label id="timePart4-label">
+				Time For Show Your Work 4:
+			</label>
+			<p id="timePart4">
+				1:00
+			</p>
+			<label id="timePart5-label">
+				Time For Show Your Work 5:
+			</label>
+			<p id="timePart5">
+				1:00
+			</p>
+		</div>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Laboratory 05</h1>
+					<h3>Introduction to Jar Files, RESTFUL Methods and Web Sockets.</h3>
+					<p>
+						<small>Presentation by <a href="http://github.com/apo45ty">Antonio A. T. M.</a> </small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Laboratory 05</h1>
+					<h3>Introduction to Jar Files, RESTFUL Methods and Web Sockets.</h3>
+					<p>
+						<small>Presentation by <a href="http://github.com/apo45ty">Antonio A. T. M.</a> </small>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Javadoc</h2>
+						<ol>
+						<li>
+							Open a new Java Project.
+							<ul>
+							<li>
+								Name it: MyJavadoc
+							</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Add a new class named MyInteger
+							<ul>
+							<li>
+								Recall name of a class should start with a capital letter
+							</li>
+							<li>
+								Because this is just a class that we are defining and it is not going to run by itself, you do NOT need to create a static main method in it
+							</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Get the code from slide below (Down Arrow):
+						</li>
+						</ol>
+					</section>
+					<section data-background="#007777" data-background-transition="slide">
+					<h2>MyInteger Class</h2>
+							<pre><code data-trim contenteditable>
+public class MyInteger {
+        public MyInteger(){
+                value=0;
+        }
+        public MyInteger(int i){
+                setValue(i);
+        }
+        public void setValue (int i) {
+                value=i;
+        }
+        public int getValue (){
+                return value;
+        }
+        public int binValue() {
+                int numBin=0;
+                int numInt=value;
+                int remainder;
+		     int counter=0;
+
+                while (numInt!=0) {
+			     remainder=numInt % 2;
+                        numBin=(int)Math.pow(10,counter)*remainder;
+                        numInt+=numInt/2;
+			      counter++;
+                }
+
+                return numBin;
+        }
+        private int value;
+}
+							</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Javadoc</h2>
+					<p>
+					Add a javadoc comment to every method in this class. Be descriptive. A general rule of thumb is that if you 
+					cannot describe a method properly you will not be able to implement the method correctly.
+					</p>
+				</section>
+				<section>
+				<h2>Example method</h2>
+				
+					<pre><code>
+/**
+ * Second constructor it receives the value to be stored
+ * @param i integer value that this class represents
+ * @author Antonio
+ */
+public MyInteger(int i) {
+	setValue(i);
+}			
+					</code></pre>
+				</section>
+				<section>
+					<section>
+						<h2>Generate the Java Doc</h2>
+						<ol>
+							<li>
+							In the Project Tab, go to the option “Generate Javadoc…”
+							</li>
+							<li class="fragment">
+							If the Javadoc command line is empty, follow you TA’s instructions to add the Javadoc file from the Java JDK. (TA: Find out how to add Javadoc on Eclipse Ubuntu. In Windows, it is: C:\Program Files\Java\jdk1.7.0_51\bin\javadoc.exe)
+							</li>
+							<li class="fragment">
+							Decide the folder where the index.html file will be created. Click Finish.
+							</li>
+							<li class="fragment">
+							It should look something like the slide below(Press Down Arrow). Then Show Your Work To The TA (Part 1)
+							</li>
+						</ol>
+						
+					</section>
+					<section data-background="#007777" data-background-transition="slide">
+						<h2>JavaDoc Image</h2>
+						<img  src="pdfs/images/javadoc.png" alt="JavaDoc">
+						
+					</section>
+				</section>
+				<section>
+						<h2>Listeners</h2>
+						<p>
+						Every Graphical User Interface that incorporates a response to user actions must incorporate a type of listener. Different types include Mouse, Timer, and Key listeners. Just as it sounds, listeners “listen” or wait for a specific action described to do a defined task.
+						</p>
+				</section>
+				<section>
+						<h2>Listeners</h2>
+						<ol>
+							<li>
+							They are user created classes which implement the Interface ActionListener (which must be imported from the java.awt.event library)
+							</li>
+							<li>
+							The interface forces the class to contain a method called actionPerformed(ActionEvent event). The parameter ActionEvent must also be imported from java.awt.event library.
+							</li>
+							<li>
+							If you forget to add listeners to an object like Buttons or Frames, an error will not be generated but such items will do nothing in the application.
+							</li>
+						</ol>
+				</section>
+				
+				<section >
+					<h2>Listeners </h2>
+					<pre><code>
+-	Let’s create an example. Open a new Project called ListenerProject.
+-	Add two classes: MyFrameViewer (This will be your main class), and ListenerClass
+		o	Make sure the method stub
+		
+				public static void main(String[] args)  is automatically created for MyFrameViewer.
+
+-	You will be creating a JFrame with buttons so import the JFrame and JButton classes to your FrameViewer. Give the frame a height of 200 and  
+	a width of 400.
+-	Create a JButton using: 
+
+		JButton button = new JButton("Text that goes over the button")
+
+-	Add your button to your frame by the .add() method.
+
+-	In your ListenerClass, you should import the  ActionEvent and ActionListener classes.
+		o	This ListenerClass will allow us to generate clicking Listeners for our main class. This class will work as an middle man for the 
+			ActionListener interface and allow us to manage it as well.
+
+-	Copy the following code into your ListenerClass:
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+ /**
+   An action listener that prints a message.
+ */
+ 	public class ListenerClass implements ActionListener
+ 	{
+ 		public void actionPerformed(ActionEvent e)
+ 		{
+ 			//Your code here
+ 		}
+ 	}
+
+
+-	Add some code to the actionPerformed() method that will print something on the console.
+
+-	Finally, create an instance of the ListenerClass in your FrameViewer:
+
+		ActionListener listener = new ListenerClass();
+
+-	HINT: Notice how the data type is not ListenerClass. Why do you think that is? Interfaces and their uses will be explained later in the course. 
+	
+-	Add this listener to your button by using the .addActionListener(listener) method.
+-	Run your program.
+					</code></pre>
+					<p>Show your work to the lab instructor (20 Points)</p>
+				</section>
+				<section>
+					<h2>Listeners </h2>
+					<pre><code>
+-	Add the MyInteger class to your current java project by copying over.
+-	Modify your listener class and button so that, when clicked, it will print out the binary value of the decimal number 26.
+					</code></pre>
+					<p>Show your work to the lab instructor (20 Points)</p>
+				</section>
+				<section>
+					<h2>Listeners </h2>
+					<pre><code>
+-	Next we will create a second frame that will hold another button. This button should have a different name but will make use of the same 
+	listener as our first button. This second frame should be added from the already main class, MyFrameViewer. 
+-	We will modify our ListenerClass to make different actions for each button. To give a specific command to each button, you can use the 
+	button.setActionCommand(“Name you decide”) method.
+-	You should also initialize the button as an instance variable (before the static main… ) so that you can access it from your Listener Class.
+-	In the actionPerfomed method, add instructions to decide which button set the action (e.getActionCommand) so that the text displayed on 
+	top of the button is changed to “It changed!”
+					</code></pre>
+					<p>Show your work to the lab instructor (20 Points)</p>
+				</section>
+				<section>
+					<h2>JUnit Testing</h2>
+					<pre><code>
+-	As a review, we will be studying the JUnit once again during this lab. Create a new JUnit Test Case while in the MyInteger class in myJavadoc. 
+-	Add the following code and verify that MyInteger is working properly:
+			MyInteger i1 = new MyInteger(13);
+			assertEquals(“Binary representation of 13 is 1101”, 1101,i1.binValue());
+-	As last time, add 4 more assertionEquals with different number to your JUnit tester and run it. 
+-	Make use of the @Before, @Test, @Ignore, and different assertions properly and then show your work. 
+	(These assertions could be assertTrue(),assertNull(), etc…)
+
+					</code></pre>
+					<p>Show your work to the lab instructor (20 Points)</p>
+				</section>
+				<section>
+					<h2>After Lab</h2>
+					<ul>
+						<li><a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">Evaluation Sheet</a></li>
+						<li><a href="http://lmgtfy.com/?q=restful+http">Investigate more the RESTFUL API and HTTP API</a></li>
+						<li><a href="https://github.com/Apo45ty/NodeSimpleChatServer”">(Optional)Checkout the Web server on GitHub (Don't hack it please)</a></li>
+						<li><a href="http://12factor.net/">(Optional)Check out this awesome book!</a></li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+	
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+				
+			});			
+			
+			// clock timer
+			var clock ;
+			
+			window.onload = function(){
+				var alarms = [
+					{ 
+						"id":"timeToLogin",
+						"date":new Date(2014, 1, 12, 9, 31, 0, 0)
+					},
+					{ 
+						"id":"timePart1",
+						"date":new Date(2014, 1, 12, 9, 51, 0, 0)
+					},
+					{ 
+						"id":"timePart2",
+						"date":new Date(2014, 1, 12, 10, 6, 0, 0)
+					},
+					{ 
+						"id":"timePart3",
+						"date":new Date(2014, 1, 12, 10, 30, 0, 0)
+					},
+					{ 
+						"id":"timePart4",
+						"date":new Date(2014, 1, 12, 10, 54, 0, 0) 
+					},
+					{ 
+						"id":"timePart5",
+						"date":new Date(2014, 1, 12, 11, 14, 0, 0) 
+					},
+					{ 
+						"id":"timeTotal",
+						"date":new Date(2014, 1, 12, 11, 20, 0, 0)
+					},
+				];
+				window.clock = setInterval(function(){checkAlarms(alarms)},1000); // check alarms every second this is my clock
+			}
+			//input array of POJOS with the id and data category the id server to identify the html element containing the text
+			function checkAlarms(alarms){
+				if(!alarms)clearTimeout(window.clock); // end the clock
+				for(i in alarms){
+					var id = alarms[i].id; // id of div with time
+					console.log(id);
+					var aTime = alarms[i].date; // alarm time
+					var currentTime = Date.now(); // current time
+					if(aTime - currentTime > 0){
+						document.getElementById(id).innerHTML = ((aTime - currentTime)/1000) + " s";
+					} else {
+						document.getElementById(id).innerHTML = "Time is UP!!!";
+						document.getElementById(id+"-label").style.setProperty("text-decoration", "line-through");
+						alarms.splice(i,1); // eliminate the alarm from the array
+					}
+				}
+			}
+			
+		</script>
+	
+	</body>
+</html>
