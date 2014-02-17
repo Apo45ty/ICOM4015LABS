@@ -86,99 +86,6 @@
 						<small>Presentation by <a href="http://github.com/apo45ty">Antonio A. T. M.</a> </small>
 					</p>
 				</section>
-
-				<section>
-					<h1>Laboratory 05</h1>
-					<h3>Introduction to Jar Files, RESTFUL Methods and Web Sockets.</h3>
-					<p>
-						<small>Presentation by <a href="http://github.com/apo45ty">Antonio A. T. M.</a> </small>
-					</p>
-				</section>
-				<section>
-					<section>
-						<h2>Javadoc</h2>
-						<ol>
-						<li>
-							Open a new Java Project.
-							<ul>
-							<li>
-								Name it: MyJavadoc
-							</li>
-							</ul>
-						</li>
-						<li class="fragment">
-							Add a new class named MyInteger
-							<ul>
-							<li>
-								Recall name of a class should start with a capital letter
-							</li>
-							<li>
-								Because this is just a class that we are defining and it is not going to run by itself, you do NOT need to create a static main method in it
-							</li>
-							</ul>
-						</li>
-						<li class="fragment">
-							Get the code from slide below (Down Arrow):
-						</li>
-						</ol>
-					</section>
-					<section data-background="#007777" data-background-transition="slide">
-					<h2>MyInteger Class</h2>
-							<pre><code data-trim contenteditable>
-public class MyInteger {
-        public MyInteger(){
-                value=0;
-        }
-        public MyInteger(int i){
-                setValue(i);
-        }
-        public void setValue (int i) {
-                value=i;
-        }
-        public int getValue (){
-                return value;
-        }
-        public int binValue() {
-                int numBin=0;
-                int numInt=value;
-                int remainder;
-		     int counter=0;
-
-                while (numInt!=0) {
-			     remainder=numInt % 2;
-                        numBin=(int)Math.pow(10,counter)*remainder;
-                        numInt+=numInt/2;
-			      counter++;
-                }
-
-                return numBin;
-        }
-        private int value;
-}
-							</code></pre>
-					</section>
-				</section>
-				<section>
-					<h2>Javadoc</h2>
-					<p>
-					Add a javadoc comment to every method in this class. Be descriptive. A general rule of thumb is that if you 
-					cannot describe a method properly you will not be able to implement the method correctly.
-					</p>
-				</section>
-				<section>
-				<h2>Example method</h2>
-				
-					<pre><code>
-/**
- * Second constructor it receives the value to be stored
- * @param i integer value that this class represents
- * @author Antonio
- */
-public MyInteger(int i) {
-	setValue(i);
-}			
-					</code></pre>
-				</section>
 				<section>
 					<section>
 						<h2>Generate the Java Doc</h2>
@@ -209,7 +116,7 @@ public MyInteger(int i) {
 					<ul>
 						<li><a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">Evaluation Sheet</a></li>
 						<li><a href="http://lmgtfy.com/?q=restful+http">Investigate more the RESTFUL API and HTTP API</a></li>
-						<li><a href="https://github.com/Apo45ty/NodeSimpleChatServer”">(Optional)Checkout the Web server on GitHub (Don't hack it please)</a></li>
+						<li><a href="https://github.com/Apo45ty/NodeSimpleChatServer">(Optional)Checkout the Web server on GitHub (Don't hack it please)</a></li>
 						<li><a href="http://12factor.net/">(Optional)Check out this awesome book!</a></li>
 					</ul>
 				</section>
