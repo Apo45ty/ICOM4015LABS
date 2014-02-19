@@ -100,15 +100,37 @@
 				<section>
 					<section>
 						<h2>JPanel</h2>
-						<p>
-							These are <a href="http://www.oracle.com/technetwork/articles/java/mixing-components-433992.html">lightweight</a> Java component that allow 
-							programmers to create platform independent <a href="http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/">User Interfaces</a>. 
-						</p>
+							<ol>
+								<li>
+									These are <a href="http://www.oracle.com/technetwork/articles/java/mixing-components-433992.html">lightweight</a> Java component that allow 
+									programmers to create platform independent <a href="http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/">User Interfaces</a>. 
+								</li>
+								<li class="fragment">
+									<a href="http://www.web-feats.com/classes/javaprog/lessons/swing_gui_intro/containment.htm">All Swing GUI applications and applets make use of a containment hierarchy that is more or less unrelated to 
+									(or at least different from) the Swing components' position on the class hierarchy.</a>
+								</li>
+								<li class="fragment">
+									A panel, or pane, such as <b>JPanel</b>, is an intermediate container. Its only purpose is to simplify the positioning atomic components like buttons and labels. Other intermediate Swing containers, such as scroll panes (JScrollPane) and tabbed panes (JTabbedPane), typically play a more visible, interactive role in a program's GUI. 
+								</li>
+							</ol>
 						
 					</section>
-					<section data-background="#007777" data-background-transition="slide">
-						<h2>JavaDoc Image</h2>
-						<img  src="pdfs/images/javadoc.png" alt="JavaDoc">
+					<section><!-- data-background="#007777" data-background-transition="slide" <img  src="pdfs/images/javadoc.png" alt="JavaDoc"> -->
+						<h2>Containment hierarchy Explained</h2>
+						<ol>
+							<li>
+								<b>Top-level Container(s):</b> To appear onscreen, every GUI component must be part of a containment hierarchy. There is at least one containment hierarchy in every program that uses Swing components. Each containment hierarchy has a top-level container at its root.
+							</li>
+							<li>
+								<b>Intermediate Container(s):</b>Generally speaking, an intermediate container consists of a content pane, or panel, that contains all the visible (atomic) components. Each top-level container must contain at least one intermediate container if there is to be anything useful displayed on the screen.
+							</li>
+							<li>
+								<b>Atomic Component(s):</b>The button and label are atomic components - self-sufficient entities that present bits of information to the user. Often, atomic components also get input from the user. 
+							</li>
+						</ol>
+						<b>Tip</b>:  To view the containment hierarchy for any frame or dialog, click its border to select it, and then press Control-Shift-F1. A list of the containment hierarchy will be written to the standard output stream. 
+				
+						<img  src="resources/containment herrarchies.gif" alt="JavaDoc">
 						
 					</section>
 				</section>
@@ -116,9 +138,10 @@
 					<h2>After Lab</h2>
 					<ul>
 						<li><a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">Evaluation Sheet</a></li>
-						<li><a href="http://lmgtfy.com/?q=restful+http">Investigate more the RESTFUL API and HTTP API</a></li>
-						<li><a href="https://github.com/Apo45ty/NodeSimpleChatServer">(Optional)Checkout the Web server on GitHub (Don't hack it please)</a></li>
-						<li><a href="http://12factor.net/">(Optional)Check out this awesome book!</a></li>
+						<li><a href="http://lmgtfy.com/?q=Mouse+Listener">Investigate Mouse Listener</a></li>
+						<li><a href="http://lmgtfy.com/?q=Key+Listener">Investigate Key Listener</a></li>
+						<li><a href="https://github.com/Apo45ty">Checkout this handsome fellow!</a></li>
+						<li><a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html#card">Investigate more types of layout</a></li>
 					</ul>
 				</section>
 			</div>
