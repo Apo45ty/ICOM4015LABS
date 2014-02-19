@@ -88,7 +88,7 @@
 					</p>
 				</section>
 				<section>
-					<h3>Follow the instructions below only to stop when instructed to:</h3>
+					<h3>Follow the <a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab4.pdf">instructions</a> below only to stop when instructed to:</h3>
 					<object data="pdf/ICOM4015Lab4.pdf" type="application/pdf" width="1000px" height="600px">
 					 
 					  <p>It appears you don't have a PDF plugin for this browser.
@@ -98,52 +98,163 @@
 					</object>
 				</section>
 				<section>
-					<section>
-						<h2>JPanel</h2>
-							<ol>
-								<li>
-									These are <a href="http://www.oracle.com/technetwork/articles/java/mixing-components-433992.html">lightweight</a> Java component that allow 
-									programmers to create platform independent <a href="http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/">User Interfaces</a>. 
-								</li>
-								<li class="fragment">
-									<a href="http://www.web-feats.com/classes/javaprog/lessons/swing_gui_intro/containment.htm">All Swing GUI applications and applets make use of a containment hierarchy that is more or less unrelated to 
-									(or at least different from) the Swing components' position on the class hierarchy.</a>
-								</li>
-								<li class="fragment">
-									A panel, or pane, such as <b>JPanel</b>, is an intermediate container. Its only purpose is to simplify the positioning atomic components like buttons and labels. Other intermediate Swing containers, such as scroll panes (JScrollPane) and tabbed panes (JTabbedPane), typically play a more visible, interactive role in a program's GUI. 
-								</li>
-							</ol>
-						
-					</section>
-					<section><!-- data-background="#007777" data-background-transition="slide" <img  src="pdfs/images/javadoc.png" alt="JavaDoc"> -->
-						<h2>Containment hierarchy Explained</h2>
+					<h2>JPanel</h2>
 						<ol>
 							<li>
-								<b>Top-level Container(s):</b> To appear onscreen, every GUI component must be part of a containment hierarchy. There is at least one containment hierarchy in every program that uses Swing components. Each containment hierarchy has a top-level container at its root.
+								These are <a href="http://www.oracle.com/technetwork/articles/java/mixing-components-433992.html">lightweight</a> Java component that allow 
+								programmers to create platform independent <a href="http://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/">User Interfaces</a>. 
 							</li>
-							<li>
-								<b>Intermediate Container(s):</b>Generally speaking, an intermediate container consists of a content pane, or panel, that contains all the visible (atomic) components. Each top-level container must contain at least one intermediate container if there is to be anything useful displayed on the screen.
+							<li class="fragment">
+								<a href="http://www.web-feats.com/classes/javaprog/lessons/swing_gui_intro/containment.htm">All Swing GUI applications and applets make use of a containment hierarchy that is more or less unrelated to 
+								(or at least different from) the Swing components' position on the class hierarchy.</a>
 							</li>
-							<li>
-								<b>Atomic Component(s):</b>The button and label are atomic components - self-sufficient entities that present bits of information to the user. Often, atomic components also get input from the user. 
+							<li class="fragment">
+								A panel, or pane, such as <b>JPanel</b>, is an intermediate container. Its only purpose is to simplify the positioning atomic components like buttons and labels. Other intermediate Swing containers, such as scroll panes (JScrollPane) and tabbed panes (JTabbedPane), typically play a more visible, interactive role in a program's GUI. 
+							</li>
+							<li class="fragment">
+								<b>Tip</b>:  To view the containment hierarchy for any frame or dialog, click its border to select it, and then press Control-Shift-F1. A list of the containment hierarchy will be written to the standard output stream. 
 							</li>
 						</ol>
-						<b>Tip</b>:  To view the containment hierarchy for any frame or dialog, click its border to select it, and then press Control-Shift-F1. A list of the containment hierarchy will be written to the standard output stream. 
-				
-						<img  src="resources/containment herrarchies.gif" alt="JavaDoc">
-						
-					</section>
+					
+				</section>
+				<section><!-- data-background="#007777" data-background-transition="slide" <img  src="pdfs/images/javadoc.png" alt="JavaDoc"> -->
+					<h3>Containment hierarchy Explained</h3>
+					<ol>
+						<li>
+							<b>Top-level Container(s):</b> To appear onscreen, every GUI component must be part of a containment hierarchy. There is at least one containment hierarchy in every program that uses Swing components. Each containment hierarchy has a top-level container at its root.
+							<center><img  src="resources/containment herrarchies.gif" alt="JavaDoc"></center>
+						</li>
+						<li class="fragment">
+							<b>Intermediate Container(s):</b>Generally speaking, an intermediate container consists of a content pane, or panel, that contains all the visible (atomic) components. Each top-level container must contain at least one intermediate container if there is to be anything useful displayed on the screen.
+						</li>
+					</ol>
 				</section>
 				<section>
-					<h2>After Lab</h2>
-					<ul>
-						<li><a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">Evaluation Sheet</a></li>
-						<li><a href="http://lmgtfy.com/?q=Mouse+Listener">Investigate Mouse Listener</a></li>
-						<li><a href="http://lmgtfy.com/?q=Key+Listener">Investigate Key Listener</a></li>
-						<li><a href="https://github.com/Apo45ty">Checkout this handsome fellow!</a></li>
-						<li><a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html#card">Investigate more types of layout</a></li>
+					<h3>Containment hierarchy Explained</h3>
+					<p>
+						<b>Atomic Component(s):</b>The button and label are atomic components - self-sufficient entities that present bits of information to the user. Often, atomic components also get input from the user. 
+					</p>
+					<ul style="list-style-type: none">
+						<li>
+							<img  src="resources/cg-combobox.gif" alt="JavaDoc">
+						</li>
+						<li>
+							<img  src="resources/cg-label.gif" alt="JavaDoc">
+						</li>
+						<li>
+							<img  src="resources/cg-progressbar.gif" alt="JavaDoc">
+						</li>
+						<li>
+							<img  src="resources/cg-buttons.gif" alt="JavaDoc">
+						</li>
 					</ul>
 				</section>
+				
+				<section>
+						<section>
+							<h2>BorderLayout</h2>
+							<img  src="resources/BorderLayoutDemo.png" alt="JavaDoc">
+							<p>As the preceding picture shows, a BorderLayout object has five areas. These areas are specified by the BorderLayout constants:</p>	
+							<ul height="100px">
+								<li>
+								PAGE_START
+								</li>
+								<li>
+								PAGE_END
+								</li>
+								<li>
+								LINE_START
+								</li>
+								<li>
+								LINE_END
+								</li>
+								<li>
+								CENTER
+								</li>
+							</ul>
+							<p>Continues below(Down arrow)</p>
+						</section>
+						<section>
+							<h2>BorderLayout</h2>
+							
+							<p>If the window is enlarged, the center area gets as much of the available space as possible. The other areas expand only as much as necessary to fill all available space. Often a container uses only one or two of the areas of the BorderLayout object — just the center, or the center and the bottom.</p>
+						</section>
+						<section data-background="#007777" data-background-transition="slide">
+							<h2>BorderLayout</h2>
+							<pre><code>	
+JButton button = new JButton("Button 1 (PAGE_START)");
+pane.add(button, BorderLayout.PAGE_START);
+
+//Make the center component big, since that's the
+//typical usage of BorderLayout.
+button = new JButton("Button 2 (CENTER)");
+button.setPreferredSize(new Dimension(200, 100)); // Make sure it wont collapse
+pane.add(button, BorderLayout.CENTER);
+
+button = new JButton("Button 3 (LINE_START)");
+pane.add(button, BorderLayout.LINE_START);
+
+button = new JButton("Long-Named Button 4 (PAGE_END)");
+pane.add(button, BorderLayout.PAGE_END);
+
+button = new JButton("5 (LINE_END)");
+pane.add(button, BorderLayout.LINE_END);
+							</code></pre>
+						</section>
+				</section>
+				<section>
+					<section>
+						<h2>BoxLayout</h2>
+						<img  src="resources/BoxLayoutDemo.png" alt="JavaDoc">
+						<p>The Swing packages include a general purpose layout manager named BoxLayout. BoxLayout either stacks its components on top of each other or places them in a row — your choice. You might think of it as a version of FlowLayout, but with greater functionality.</p>
+					</section>
+					<section data-background="#007777" data-background-transition="slide">
+						<h2>BoxLayout</h2>
+						<pre><code>
+pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
+ 
+addAButton("Button 1", pane);
+addAButton("Button 2", pane);
+addAButton("Button 3", pane);
+addAButton("Long-Named Button 4", pane);
+addAButton("5", pane);;
+						</code></pre>
+					</section>
+			</section>
+				<section>
+					<section>
+						<h2>GridLayout</h2>
+						<img  src="resources/GridLayoutDemo.png" alt="JavaDoc">
+						<p>A GridLayout object places components in a grid of cells. Each component takes all the available space within its cell, and each cell is exactly the same size. If the GridLayoutDemo window is resized, the GridLayout object changes the cell size so that the cells are as large as possible, given the space available to the container.(See code below, down arrow)</p>
+					</section>
+					<section data-background="#007777" data-background-transition="slide">
+						<h2>GridLayout</h2>
+						<pre><code>
+
+GridLayout experimentLayout = new GridLayout(0,2);
+
+...
+
+compsToExperiment.setLayout(experimentLayout);
+
+compsToExperiment.add(new JButton("Button 1"));
+compsToExperiment.add(new JButton("Button 2"));
+compsToExperiment.add(new JButton("Button 3"));
+compsToExperiment.add(new JButton("Long-Named Button 4"));
+compsToExperiment.add(new JButton("5"));
+						</code></pre>
+					</section>
+			</section>
+			<section>
+				<h2>After Lab</h2>
+				<ul>
+					<li><a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">Evaluation Sheet</a></li>
+					<li><a href="http://lmgtfy.com/?q=Mouse+Listener">Investigate Mouse Listener</a></li>
+					<li><a href="http://lmgtfy.com/?q=Key+Listener">Investigate Key Listener</a></li>
+					<li><a href="http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html#card">Investigate more types of layout</a></li>
+					<li><a href="https://github.com/Apo45ty">(Optional)Checkout this handsome fellow!</a></li>
+				</ul>
+			</section>
 			</div>
 
 		</div>
