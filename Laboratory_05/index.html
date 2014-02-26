@@ -32,6 +32,17 @@
 
 	<body>
 		<div id="countdown" style="position:fixed;left:0px;width:130px;color:red;background-color:rgba(255,255,255,0.5);">
+			<script type="text/javascript">
+			function toggle_visibility() {
+				var id = 'displays';
+			   var e = document.getElementById(id);
+			   if(e.style.display == 'block')
+				  e.style.display = 'none';
+			   else
+				  e.style.display = 'block';
+			}
+			</script>
+			<a href="#" type="button" onclick="toggle_visibility();">Toggle</a>
 			<div id="displays">
 				<label id="timeTotal-label">
 					Total Time:
@@ -76,17 +87,6 @@
 					1:00
 				</p>
 			</div>
-			<script type="text/javascript">
-			function toggle_visibility() {
-				var id = 'displays';
-			   var e = document.getElementById(id);
-			   if(e.style.display == 'block')
-				  e.style.display = 'none';
-			   else
-				  e.style.display = 'block';
-			}
-			</script>
-			<a href="#" type="button" onclick="toggle_visibility();">Toggle</a>
 		</div>
 		<div class="reveal">
 
