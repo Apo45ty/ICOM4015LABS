@@ -295,6 +295,7 @@ Request Line -> POST / HTTP/1.0
 							"date":new Date(2014, 1, 26, 9, 20, 0, 0)
 						}
 					];
+					console.log("done with alarms");
 				} else if(Date.now() < new Date(2014, 1, 26, 11, 30, 0, 0)){
 					console.log("037");
 					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "37";
@@ -338,10 +339,12 @@ Request Line -> POST / HTTP/1.0
 						}
 					];
 				}
-				window.clock = setInterval(function(){checkAlarms(alarms)},1000); // check alarms every second this is my clock
+				window.clock = setInterval(  function(){checkAlarms(alarms);},1000); // check alarms every second this is my clock
+				console.log("done with clock");
 			}
 			//input array of POJOS with the id and data category the id server to identify the html element containing the text
 			function checkAlarms(alarms){
+				console.log("Checking clock");
 				if(!alarms)clearTimeout(window.clock); // end the clock
 				for(i in alarms){
 					var id = alarms[i].id; // id of div with time
