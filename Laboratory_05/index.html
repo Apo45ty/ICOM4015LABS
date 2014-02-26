@@ -31,7 +31,7 @@
 	</head>
 
 	<body>
-		<div id="countdown" style="position:fixed;left:0px;width:100px;color:red;background-color:rgba(255,255,255,0.5);">
+		<div id="countdown" style="position:fixed;left:0px;width:130px;color:red;background-color:rgba(255,255,255,0.5);">
 			<label id="timeTotal-label">
 				Total Time:
 			</label>
@@ -45,33 +45,15 @@
 				1:00
 			</p>
 			<label id="timePart1-label">
-				Time For Show Your Work 1:
+				Time For Part 1:
 			</label>
 			<p id="timePart1">
 				1:00
 			</p>
 			<label id="timePart2-label">
-				Time For Show Your Work 2:
+				Time For Part 2:
 			</label>
 			<p id="timePart2">
-				1:00
-			</p>
-			<label id="timePart3-label">
-				Time For Show Your Work 3:
-			</label>
-			<p id="timePart3">
-				1:00
-			</p>
-			<label id="timePart4-label">
-				Time For Show Your Work 4:
-			</label>
-			<p id="timePart4">
-				1:00
-			</p>
-			<label id="timePart5-label">
-				Time For Show Your Work 5:
-			</label>
-			<p id="timePart5">
 				1:00
 			</p>
 		</div>
@@ -81,36 +63,122 @@
 			<div class="slides">
 				<section>
 					<h1>Laboratory 05</h1>
-					<h3>Introduction to Jar Files, RESTFUL Methods and Web Sockets.</h3>
+					<h3>GUIs, Panels, as well as Mouse and Key Listeners</h3>
+					<h4 ><small id="section">Section </small></h4>
 					<p>
-						<small>Presentation by <a href="http://github.com/apo45ty">Antonio A. T. M.</a> </small>
+						<small>Presentation by Hector,<a href="http://github.com/apo45ty">Antonio</a> and Jose </small>
 					</p>
 				</section>
 				<section>
-					<section>
-						<h2>Generate the Java Doc</h2>
-						<ol>
-							<li>
-							In the Project Tab, go to the option “Generate Javadoc…”
-							</li>
-							<li class="fragment">
-							If the Javadoc command line is empty, follow you TA’s instructions to add the Javadoc file from the Java JDK. (TA: Find out how to add Javadoc on Eclipse Ubuntu. In Windows, it is: C:\Program Files\Java\jdk1.7.0_51\bin\javadoc.exe)
-							</li>
-							<li class="fragment">
-							Decide the folder where the index.html file will be created. Click Finish.
-							</li>
-							<li class="fragment">
-							It should look something like the slide below(Press Down Arrow). Then Show Your Work To The TA (Part 1)
-							</li>
-						</ol>
-						
-					</section>
-					<section data-background="#007777" data-background-transition="slide">
-						<h2>JavaDoc Image</h2>
-						<img  src="pdfs/images/javadoc.png" alt="JavaDoc">
-						
-					</section>
+					<h3>Follow the <a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">instructions</a> below only to stop when instructed to:</h3>
+					<object data="pdf/ICOM4015Lab4.pdf" type="application/pdf" width="1000px" height="600px">
+					 
+					  <p>It appears you don't have a PDF plugin for this browser.
+					  No biggie... you can <a href="https://ece.uprm.edu/~ahchinaei/courses/2014jan/icom4015/ICOM4015Lab5.pdf">click here to
+					  download the PDF file.</a></p>
+					  
+					</object>
 				</section>
+				<section>
+					<h2>HTTP</h2>
+					<ol>
+						<li>
+						<p>The hypertext transfer protocol is a <b>high level</b> protocol for sharing hypertext on the web. It was design to be part of the Internet Protocol and depends on a reliable transport layer protocol(TCP,UDP,SSDP,UDP). It is based on the Representational state transfer (REST) architecture.</p>
+						</li>
+						<li class="fragment">
+						It has two mayor versions 1.0 and 1.1. 
+						</li>
+						<li class="fragment">
+						<p>The way information passed to the server is with the utilization of "methods" each having a unique purpose for the server.  </p> 
+							<ul>
+								<li>
+								<span>HTTP 1.0 has:</span>
+									<ul>
+										<li>
+											GET
+										</li>
+										<li>
+											POST
+										</li>
+										<li>
+											HEAD
+										</li>
+									</ul>
+								</li>
+								<li>
+								<span>HTTP 1.1 added:</span>
+									<ul>
+										<li>
+											PUT
+										</li>
+										<li>
+											UPGRADE,
+										</li>
+										<li>
+											...
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h2>GET Method</h2>
+					<p>
+						This method is intended for information fetching and it passes parameter to the server via the URL.
+					</p>
+					<br/>
+					<h4>Example Request</h4>
+					<pre><code>
+Request Line -> GET / HTTP/1.0
+                Host: google.com
+					</code></pre>
+					<h4>Example Response</h4>
+					<pre><code>
+					HTTP/1.0 200 OK
+					</code></pre>
+				</section>
+				<section>
+					<h2>POST Method</h2>
+					<p>
+						This method is intended for the passing of information to the server that it will permanently keep and stored. 
+					</p>
+					<br/>
+					<h4>Example Request</h4>
+					<pre><code>
+Request Line -> POST / HTTP/1.0
+                Host: google.com
+                Content-Type: application/x-www-form-urlencoded
+                Content-Length: length
+
+                param1=value1&param2=value2
+					</code></pre>
+					<h4>Example Response</h4>
+					<pre><code>
+					HTTP/1.0 200 OK
+					</code></pre>
+				</section>
+				<section>
+					<h2>Uniform Resource Locator</h2>
+					<p>
+						An URL is a way to locate resources on the web.
+					</p>
+					<pre><code>
+ http://www.google.com/index.html:80
+|----|-|-------------|-----------|--|
+  ^       ^              ^        ^
+  |       |              |        Port
+  |       |              Path     
+  |       HOST					
+  Protocol
+					</code></pre>
+				</section>
+				<section data-background="#007777" data-background-transition="slide">
+							<h2>Airplane View Of The Web</h2>
+							<img  src="resources/url.jpeg" alt="JavaDoc">
+				</section>
+				
 				<section>
 					<h2>After Lab</h2>
 					<ul>
@@ -118,6 +186,7 @@
 						<li><a href="http://lmgtfy.com/?q=restful+http">Investigate more the RESTFUL API and HTTP API</a></li>
 						<li><a href="https://github.com/Apo45ty/NodeSimpleChatServer">(Optional)Checkout the Web server on GitHub (Don't hack it please)</a></li>
 						<li><a href="http://12factor.net/">(Optional)Check out this awesome book!</a></li>
+						<li>Write a report on all the codes provided in this lab as well as the underlying jar libraries. You should add comments to almost each line of the codes you study before Lab 6.</li>
 					</ul>
 				</section>
 			</div>
@@ -160,36 +229,71 @@
 			var clock ;
 			
 			window.onload = function(){
-				var alarms = [
-					{ 
-						"id":"timeToLogin",
-						"date":new Date(2014, 1, 12, 9, 31, 0, 0)
-					},
-					{ 
-						"id":"timePart1",
-						"date":new Date(2014, 1, 12, 9, 51, 0, 0)
-					},
-					{ 
-						"id":"timePart2",
-						"date":new Date(2014, 1, 12, 10, 6, 0, 0)
-					},
-					{ 
-						"id":"timePart3",
-						"date":new Date(2014, 1, 12, 10, 30, 0, 0)
-					},
-					{ 
-						"id":"timePart4",
-						"date":new Date(2014, 1, 12, 10, 54, 0, 0) 
-					},
-					{ 
-						"id":"timePart5",
-						"date":new Date(2014, 1, 12, 11, 14, 0, 0) 
-					},
-					{ 
-						"id":"timeTotal",
-						"date":new Date(2014, 1, 12, 11, 20, 0, 0)
-					},
-				];
+				var alarms  = [];
+				if(Date.now() < (new Date(2014, 2, 19, 9, 30, 0, 0))){
+					console.log("036");
+					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "36";
+					alarms = [
+						{ 
+							"id":"timeToLogin",
+							"date":new Date(2014, 2, 19, 7, 31, 0, 0)
+						},
+						{ 
+							"id":"timePart1",
+							"date":new Date(2014, 2, 19, 8, 21, 0, 0)
+						},
+						{ 
+							"id":"timePart2",
+							"date":new Date(2014, 2, 19, 9, 1, 0, 0)
+						},
+						{ 
+							"id":"timeTotal",
+							"date":new Date(2014, 2, 19, 9, 20, 0, 0)
+						}
+					];
+				} else if(Date.now() < new Date(2014, 2, 19, 11, 30, 0, 0)){
+					console.log("037");
+					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "37";
+					alarms = [
+						{ 
+							"id":"timeToLogin",
+							"date":new Date(2014, 2, 19, 9, 31, 0, 0)
+						},
+						{ 
+							"id":"timePart1",
+							"date":new Date(2014, 2, 19, 10, 21, 0, 0)
+						},
+						{ 
+							"id":"timePart2",
+							"date":new Date(2014, 2, 19, 11, 1, 0, 0)
+						},
+						{ 
+							"id":"timeTotal",
+							"date":new Date(2014, 2, 19, 11, 20, 0, 0)
+						}
+					];
+				} else {
+					console.log("038");
+					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "38";
+					alarms = [
+						{ 
+							"id":"timeToLogin",
+							"date":new Date(2014, 2, 19, 11, 31, 0, 0)
+						},
+						{ 
+							"id":"timePart1",
+							"date":new Date(2014, 2, 19, 12, 21, 0, 0)
+						},
+						{ 
+							"id":"timePart2",
+							"date":new Date(2014, 2, 19, 13, 6, 0, 0)
+						},
+						{ 
+							"id":"timeTotal",
+							"date":new Date(2014, 2, 19, 13, 20, 0, 0)
+						}
+					];
+				}
 				window.clock = setInterval(function(){checkAlarms(alarms)},1000); // check alarms every second this is my clock
 			}
 			//input array of POJOS with the id and data category the id server to identify the html element containing the text
@@ -201,7 +305,10 @@
 					var aTime = alarms[i].date; // alarm time
 					var currentTime = Date.now(); // current time
 					if(aTime - currentTime > 0){
-						document.getElementById(id).innerHTML = ((aTime - currentTime)/1000) + " s";
+						var tMinutes = ((aTime - currentTime)/60000);
+						var minutes = Math.floor(tMinutes);
+						var seconds = Math.floor((tMinutes - minutes)*60);
+						document.getElementById(id).innerHTML =  minutes+ ":" +seconds;
 					} else {
 						document.getElementById(id).innerHTML = "Time is UP!!!";
 						document.getElementById(id+"-label").style.setProperty("text-decoration", "line-through");
