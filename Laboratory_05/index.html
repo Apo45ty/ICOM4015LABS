@@ -32,30 +32,61 @@
 
 	<body>
 		<div id="countdown" style="position:fixed;left:0px;width:130px;color:red;background-color:rgba(255,255,255,0.5);">
-			<label id="timeTotal-label">
-				Total Time:
-			</label>
-			<p id="timeTotal">
-				1:00
-			</p>
-			<label id="timeToLogin-label">
-				Time For Login:
-			</label>
-			<p id="timeToLogin">
-				1:00
-			</p>
-			<label id="timePart1-label">
-				Time For Part 1:
-			</label>
-			<p id="timePart1">
-				1:00
-			</p>
-			<label id="timePart2-label">
-				Time For Part 2:
-			</label>
-			<p id="timePart2">
-				1:00
-			</p>
+			<div id="displays">
+				<label id="timeTotal-label">
+					Total Time:
+				</label>
+				<p id="timeTotal">
+					1:00
+				</p>
+				<label id="timeToLogin-label">
+					Time For Login:
+				</label>
+				<p id="timeToLogin">
+					1:00
+				</p>
+				<label id="timePart1-label">
+					Time For Part 1:
+				</label>
+				<p id="timePart1">
+					1:00
+				</p>
+				<label id="timePart2-label">
+					Time For Part 2:
+				</label>
+				<p id="timePart2">
+					1:00
+				</p>
+				<label id="timePart3-label">
+					Time For Part 3:
+				</label>
+				<p id="timePart3">
+					1:00
+				</p>
+				<label id="timePart4-label">
+					Time For Part 4:
+				</label>
+				<p id="timePart4">
+					1:00
+				</p>
+				<label id="timePart5-label">
+					Time For Part 5:
+				</label>
+				<p id="timePart5">
+					1:00
+				</p>
+			</div>
+			<script type="text/javascript">
+			function toggle_visibility() {
+				var id = 'displays';
+			   var e = document.getElementById(id);
+			   if(e.style.display == 'block')
+				  e.style.display = 'none';
+			   else
+				  e.style.display = 'block';
+			}
+			</script>
+			<a href="#" type="button" onclick="toggle_visibility();">Toggle</a>
 		</div>
 		<div class="reveal">
 
@@ -157,7 +188,7 @@ Request Line -> POST / HTTP/1.0
                 Content-Type: application/x-www-form-urlencoded
                 Content-Length: length
 
-                param1=value1&param2=value2
+                param1=value1&;param2=value2
 					</code></pre>
 					<h4>Example Response</h4>
 					<pre><code>
@@ -231,46 +262,58 @@ Request Line -> POST / HTTP/1.0
 			
 			window.onload = function(){
 				var alarms  = [];
-				if(Date.now() < (new Date(2014, 2, 19, 9, 30, 0, 0))){
+				if(Date.now() < (new Date(2014, 1, 26, 9, 30, 0, 0))){
 					console.log("036");
 					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "36";
 					alarms = [
 						{ 
 							"id":"timeToLogin",
-							"date":new Date(2014, 2, 19, 7, 31, 0, 0)
+							"date":new Date(2014, 1, 26, 7, 31, 0, 0)
 						},
 						{ 
 							"id":"timePart1",
-							"date":new Date(2014, 2, 19, 8, 21, 0, 0)
+							"date":new Date(2014, 1, 26, 7, 51, 0, 0)
 						},
 						{ 
 							"id":"timePart2",
-							"date":new Date(2014, 2, 19, 9, 1, 0, 0)
+							"date":new Date(2014, 1, 26, 8, 16, 0, 0)
+						},
+						{ 
+							"id":"timePart3",
+							"date":new Date(2014, 1, 26, 8, 26, 0, 0)
+						},
+						{ 
+							"id":"timePart4",
+							"date":new Date(2014, 1, 26, 8, 46, 0, 0)
+						},
+						{ 
+							"id":"timePart5",
+							"date":new Date(2014, 1, 26, 9, 16, 0, 0)
 						},
 						{ 
 							"id":"timeTotal",
-							"date":new Date(2014, 2, 19, 9, 20, 0, 0)
+							"date":new Date(2014, 1, 26, 9, 20, 0, 0)
 						}
 					];
-				} else if(Date.now() < new Date(2014, 2, 19, 11, 30, 0, 0)){
+				} else if(Date.now() < new Date(2014, 1, 26, 11, 30, 0, 0)){
 					console.log("037");
 					document.getElementById("section").innerHTML = document.getElementById("section").innerHTML + "37";
 					alarms = [
 						{ 
 							"id":"timeToLogin",
-							"date":new Date(2014, 2, 19, 9, 31, 0, 0)
+							"date":new Date(2014, 1, 26, 9, 31, 0, 0)
 						},
 						{ 
 							"id":"timePart1",
-							"date":new Date(2014, 2, 19, 10, 21, 0, 0)
+							"date":new Date(2014, 1, 26, 10, 21, 0, 0)
 						},
 						{ 
 							"id":"timePart2",
-							"date":new Date(2014, 2, 19, 11, 1, 0, 0)
+							"date":new Date(2014, 1, 26, 11, 1, 0, 0)
 						},
 						{ 
 							"id":"timeTotal",
-							"date":new Date(2014, 2, 19, 11, 20, 0, 0)
+							"date":new Date(2014, 1, 26, 11, 20, 0, 0)
 						}
 					];
 				} else {
@@ -279,19 +322,19 @@ Request Line -> POST / HTTP/1.0
 					alarms = [
 						{ 
 							"id":"timeToLogin",
-							"date":new Date(2014, 2, 19, 11, 31, 0, 0)
+							"date":new Date(2014, 1, 26, 11, 31, 0, 0)
 						},
 						{ 
 							"id":"timePart1",
-							"date":new Date(2014, 2, 19, 12, 21, 0, 0)
+							"date":new Date(2014, 1, 26, 12, 21, 0, 0)
 						},
 						{ 
 							"id":"timePart2",
-							"date":new Date(2014, 2, 19, 13, 6, 0, 0)
+							"date":new Date(2014, 1, 26, 13, 6, 0, 0)
 						},
 						{ 
 							"id":"timeTotal",
-							"date":new Date(2014, 2, 19, 13, 20, 0, 0)
+							"date":new Date(2014, 1, 26, 13, 20, 0, 0)
 						}
 					];
 				}
